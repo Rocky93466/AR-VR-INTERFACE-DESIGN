@@ -1,0 +1,61 @@
+// src/VRScene.js
+import 'aframe';
+import React from 'react';
+
+export default function VRScene() {
+  return (
+    <a-scene>
+      {/* Sky background */}
+      <a-sky color="#ECECEC"></a-sky>
+
+      {/* Interactive Menu Panel */}
+      <a-plane 
+        position="0 2 -4" 
+        rotation="0 0 0" 
+        width="3" 
+        height="2" 
+        color="#333" 
+        opacity="0.9">
+        
+        <a-text 
+          value="Welcome to VR Dashboard" 
+          align="center" 
+          color="#fff" 
+          position="0 0.7 0" 
+          width="4">
+        </a-text>
+
+        <a-box 
+          position="-0.8 -0.3 0.1" 
+          depth="0.1" 
+          height="0.5" 
+          width="1.2" 
+          color="#4ade80" 
+          class="clickable">
+          <a-text value="Start" position="0 0 0.1" align="center" color="black" width="2"></a-text>
+        </a-box>
+
+        <a-box 
+          position="0.8 -0.3 0.1" 
+          depth="0.1" 
+          height="0.5" 
+          width="1.2" 
+          color="#f87171" 
+          class="clickable">
+          <a-text value="Exit" position="0 0 0.1" align="center" color="black" width="2"></a-text>
+        </a-box>
+      </a-plane>
+
+      {/* Camera and cursor for interaction */}
+      <a-entity position="0 1.6 0">
+        <a-camera>
+          <a-cursor 
+            color="#FF0000" 
+            fuse="true" 
+            fuse-timeout="500">
+          </a-cursor>
+        </a-camera>
+      </a-entity>
+    </a-scene>
+  );
+}
